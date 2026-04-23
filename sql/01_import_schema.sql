@@ -1,0 +1,74 @@
+-- =============================================================================
+-- 01_import_schema.sql
+--
+-- DATA SOURCE: Generated with Python (Faker library)
+--
+-- The dataset used in this project was NOT created manually.
+-- It was generated using a custom Python script that uses the Faker library
+-- to produce realistic synthetic e-commerce data.
+--
+-- WHAT THE SCRIPT GENERATES:
+--   5,000 rows of fictional customer orders across 6 European countries:
+--   Spain (ES), Germany (DE), France (FR), Netherlands (NL), Ireland (IE),
+--   United Kingdom (UK)
+--
+-- COLUMNS GENERATED:
+--   order_id            → Unique order identifier (ORD-XXXXXXX)
+--   customer_id         → Unique customer identifier (CUST-XXXXXX)
+--   full_name           → Locale-specific fake name (e.g. "Peadar Keller")
+--   email               → Fake email address
+--   phone               → Locale-specific phone number
+--   birth_date          → Random date of birth
+--   gender              → M / F / Other
+--   street_address      → Fake street address
+--   city                → City matching the country
+--   postal_code         → Format matching the country (ES: 28045, UK: SW1A 1AA, etc.)
+--   country             → ES / DE / FR / NL / IE / UK
+--   ip_address          → Random IPv4 address
+--   order_date          → Random date within the last 3 years
+--   product_category    → Electronics / Beauty / Sports / Home / Books / Clothing
+--   order_value_eur     → Random value between 5 and 500 EUR
+--   payment_method      → Credit Card / PayPal / Bank Transfer / etc.
+--   device_type         → Desktop / Mobile / Tablet
+--   customer_segment    → Premium / Standard / Basic
+--   card_last4          → Random 4-digit number (simulates card suffix)
+--   customer_notes      → Free-text notes (some contain embedded PII)
+--
+-- HOW THE DATA WAS LOADED INTO MYSQL:
+--   The Faker script exported the data as a CSV file.
+--   The CSV was then loaded into MySQL using a Python script
+--   (02_load_to_mysql.py) with pandas + mysql-connector-python,
+--   inserting rows in batches of 1,000 using executemany().
+--
+-- WHY NOT THE TABLE DATA IMPORT WIZARD?
+--   Two other methods were attempted first and failed:
+--
+--   Attempt 1 — Table Data Import Wizard:
+--     Stopped silently at row 121. The Wizard misinterpreted embedded
+--     newlines inside customer_notes fields as empty rows, treating
+--     them as end-of-file. 363 rows in the dataset contain multi-line
+--     notes (\n inside quoted text) — these are valid CSV rows, not bugs.
+--
+--   Attempt 2 — LOAD DATA LOCAL INFILE:
+--     Blocked by client-side restrictions (Error 2068) on this version
+--     of MySQL Workbench. OPT_LOCAL_INFILE could not be enabled.
+--
+-- SOLUTION — Python script (02_load_to_mysql.py):
+--   pandas.read_csv() handles embedded newlines correctly.
+--   mysql-connector-python inserts rows in batches of 1,000.
+--   All 5,000 rows loaded successfully with 0 errors.
+--
+-- WHY SYNTHETIC DATA?
+--   This is a portfolio project. Using real customer data would itself
+--   violate GDPR. Faker generates realistic data that mimics real
+--   distributions without exposing any real person's information.
+--   The anonymization techniques work identically on real data.
+--
+-- SEED:
+--   The Faker script used seed=42 for reproducibility.
+--   Running the script again with the same seed produces the same dataset.
+--
+-- FILES INVOLVED:
+--   [Faker script].py                  → Generates the CSV (5,000 rows, seed=42)
+--   02_load_to_mysql.py                → Loads CSV into gdpr.customers_orders_with_notes
+-- =============================================================================
