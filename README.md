@@ -60,7 +60,7 @@ Project_GDPR_GitHub/
 3. **SQL anonymization** — apply 8 anonymization techniques to structured columns
 4. **K-anonymity validation** — verify re-identification risk using quasi-identifier analysis
 5. **Purpose-limited views** — create analytical views with minimal quasi-identifiers
-6. **LLM text anonymization** — detect and replace PII in 272 free-text customer notes using Ollama
+6. **LLM text anonymization** — detect and replace PII in 269 free-text customer notes using Ollama
 
 ## Part 3: Analytical Validation
 
@@ -95,7 +95,7 @@ CTEs, conditional aggregation, and date-based calculations.
 |--------|-------|
 | Customer records anonymized | 5,000 |
 | Anonymization techniques applied | 8 |
-| Free-text notes processed (Ollama) | 272 |
+| Free-text notes processed (Ollama) | 269 |
 | K-anonymity violations — 2 quasi-ids | 0 |
 | K-anonymity violations — 3 quasi-ids | 18 |
 | K-anonymity violations — 4 quasi-ids | 1,085 (resolved with purpose-limited views) |
