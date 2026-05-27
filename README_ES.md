@@ -60,7 +60,7 @@ Project_GDPR_GitHub/
 3. **Anonimización SQL** — aplicación de 8 técnicas de anonimización a columnas estructuradas
 4. **Validación de k-anonimidad** — verificación del riesgo de re-identificación mediante análisis de quasi-identificadores
 5. **Vistas de propósito limitado** — creación de vistas analíticas con el mínimo número de quasi-identificadores
-6. **Anonimización de texto con LLM** — detección y sustitución de datos personales en 272 notas de texto libre usando Ollama
+6. **Anonimización de texto con LLM** — detección y sustitución de datos personales en 269 notas de texto libre usando Ollama
 
 ## Parte 3: Validación Analítica
 
@@ -93,7 +93,7 @@ CTEs, agregación condicional y cálculos basados en fechas.
 |---------|-------|
 | Registros de clientes anonimizados | 5.000 |
 | Técnicas de anonimización aplicadas | 8 |
-| Notas de texto procesadas (Ollama) | 272 |
+| Notas de texto procesadas (Ollama) | 269 |
 | Violaciones de k-anonimidad — 2 quasi-ids | 0 |
 | Violaciones de k-anonimidad — 3 quasi-ids | 18 |
 | Violaciones de k-anonimidad — 4 quasi-ids | 1.085 (resueltas con vistas de propósito limitado) |
